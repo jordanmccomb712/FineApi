@@ -9,7 +9,7 @@ using FinesApi.Models;
 
 namespace FineApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Fines")]
     [ApiController]
     public class FinesController : ControllerBase
     {
@@ -18,6 +18,14 @@ namespace FineApi.Controllers
         public FinesController(FineContext context)
         {
             _context = context;
+            _context.Fines.Add(new Fine ("zcff412dvXFD", "Johnson", 123.50 ,new DateOnly(2022, 12 ,31), false ));
+            _context.Fines.Add(new Fine ("GRxsd751Jfda", "Smith", 146.00 ,new DateOnly(2021, 6 ,15), false ));
+            _context.Fines.Add(new Fine ("kcSF76FW9dA2", "McDonald", 220.15 ,new DateOnly(2021, 6 ,2), false ));
+            _context.Fines.Add(new Fine ("jfmc62FHWm1G", "Black", 120.75 ,new DateOnly(2023, 1 ,14), false ));
+            _context.Fines.Add(new Fine ("MVU37fnf7FAv", "Simmons", 180.00 ,new DateOnly(2022, 3 ,21), false ));
+            _context.Fines.Add(new Fine ("XgWID73djw12", "Roth", 157.50 ,new DateOnly(2022, 8 ,17), false ));
+            _context.SaveChangesAsync();
+
         }
 
         // GET: api/Fines
